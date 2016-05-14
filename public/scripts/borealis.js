@@ -4,61 +4,60 @@ var lightValue = null;
 
 setInterval(function(){
   lightValue = Math.round(Math.random() * (0 - 500) + 500);
-  selectLightColor();
 }, 1000);
 
-var lightsNumber = 6;
-
-var greenColorValue = Math.round(Math.random() * (0 - 255) + 255);
-var greenLights = "rgb("+greenColorValue+", 255, "+greenColorValue+")";
-
-var yellowColorValue = Math.round(Math.random() * (0 - 255) + 255);
-var yellowLights = "rgb("+yellowColorValue+", 255, "+yellowColorValue+")";
-
-var greenColorValue = Math.round(Math.random() * (0 - 255) + 255);
-var greenLights = "rgb("+greenColorValue+", 255, "+greenColorValue+")";
-
-var redColorValue = Math.round(Math.random() * (0 - 255) + 255);
-var redLights = "rgb("+redColorValue+", 255, "+redColorValue+")";
-
-var heightLights = Math.round(Math.random() * (10 - 255) + 255);
-
-
-
-var lightValue = null;
-var lightColor = null;
-function selectLightColor(lightvalue) {
-  if (lightValue >= 350) {
-    lightColor = redLights;
-  } else if (lightValue <= 349 && lightValue >= 150) {
-    lightColor = yellowLights;
+var heightLights = null;
+function selectLightHeights() {
+  if (lightValue >= 450) {
+    heightLights = 50;
+  } else if (lightValue <= 449 && lightValue >= 350) {
+    heightLights = 100;
+  } else if (lightValue <= 349 && lightValue >= 250) {
+    heightLights = 150;
+  } else if (lightValue <= 249 && lightValue >= 150) {
+    heightLights = 200;
   } else {
-    lightColor = greenLights;
+    heightLights = 250;
   }
 }
 
+function selectLightNumber() {
+  if (lightValue >= 450) {
+    lightsNumber = 7;
+  } else if (lightValue <= 449 && lightValue >= 350) {
+    lightsNumber = 10;
+  } else if (lightValue <= 349 && lightValue >= 250) {
+    lightsNumber = 13;
+  } else if (lightValue <= 249 && lightValue >= 150) {
+    lightsNumber = 16;
+  } else {
+    lightsNumber = 19;
+  }
+}
 
+var lightColor = null;
+function selectLightColor() {
+  console.log(lightColor);
+  var colorValue = Math.round(Math.random() * (0 - 255) + 255);
+  if (lightValue >= 350) {
+    lightColor = "rgb(255, "+colorValue+", "+colorValue+")";//red
+  } else if (lightValue <= 349 && lightValue >= 150) {
+    lightColor = "rgb(255, 255, "+colorValue+")";//yellow
+  } else {
+    lightColor = "rgb("+colorValue+", 255, "+colorValue+")";//green
+  }
+}
 
 setInterval(function(){
-  randomX = Math.round(Math.random() * (0 - 100) + 100);
-  xPosition = randomX;
-  randomX_02 = randomX + 1.5 + "%";
-  randomX_03 = randomX + 3 + "%";
-
-  baseY = 250;
-  yPosition = baseY - Math.round(Math.random() * (0 - 100) + 100);
-
-  randomRY = Math.round(Math.random() * (0 - 100) + 100) + "%";
-
-  heightLights = Math.round(Math.random() * (100 - 255) + 255);
-}, 1000);
-
-setInterval(function(){
+  selectLightNumber();
+  selectLightHeights();
+  selectLightColor();
+  xPosition = Math.round(Math.random() * (0 - 100) + 100);
+  yPosition = 250 - Math.round(Math.random() * (0 - 100) + 100);
   for (i=0; i<lightsNumber; i++) {
-    var cssClass = "borealis__item borealis__item--0" + i;
-    var yPositionPlus = yPosition + (i*12);
-    var xPositionPlus = xPosition + (i*2) + "%";
-    console.log(yPositionPlus);
+    var cssClass = "borealis__item borealis__item--" + i;
+    var yPositionPlus = yPosition + (i*Math.round(Math.random() * (0 - 20)+20));
+    var xPositionPlus = xPosition + (i*1) + "%";
     visualization.append('ellipse').attr('class', cssClass)
       .attr('cy', yPositionPlus)
       .attr('cx', xPositionPlus)
@@ -66,11 +65,11 @@ setInterval(function(){
       .attr('rx', '10')
       .attr('ry', heightLights)
       .attr('filter', 'url(#f1)')
-        .transition().delay(5000)
+        .transition().delay(10000)
         .attr('class', 'remove-me');
   }
 }, 2000);
 
 setInterval(function(){
   visualization.selectAll('.remove-me').remove();
-}, 10000);
+}, 20000);

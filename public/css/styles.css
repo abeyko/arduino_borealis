@@ -28,44 +28,84 @@ body {
 .borealis__item {
   transform: rotate(12deg);
 }
-.borealis__item--00 {
-  animation: borealisFade 4s ease;
+.borealis__item--0 {
+  animation: borealisFade 8s ease;
   opacity: 0;
 }
-.borealis__item--01 {
-  animation: borealisFade 4s ease 0.5s;
+.borealis__item--1 {
+  animation: borealisFade 8s ease 0.5s;
   opacity: 0;
 }
-.borealis__item--02 {
-  animation: borealisFade 4s ease 1s;
+.borealis__item--2 {
+  animation: borealisFade 8s ease 1s;
   opacity: 0;
 }
-.borealis__item--03 {
-  animation: borealisFade 4s ease 1.5s;
+.borealis__item--3 {
+  animation: borealisFade 8s ease 1.5s;
   opacity: 0;
 }
-.borealis__item--04 {
-  animation: borealisFade 4s ease 3s;
+.borealis__item--4 {
+  animation: borealisFade 8s ease 2s;
   opacity: 0;
 }
-.borealis__item--05 {
-  animation: borealisFade 4s ease 4.5s;
+.borealis__item--5 {
+  animation: borealisFade 8s ease 2.5s;
   opacity: 0;
 }
-.borealis__item--06 {
-  animation: borealisFade 4s ease 5s;
+.borealis__item--6 {
+  animation: borealisFade 8s ease 3s;
   opacity: 0;
 }
-.borealis__item--07 {
-  animation: borealisFade 4s ease 5.5s;
+.borealis__item--7 {
+  animation: borealisFade 8s ease 3.5s;
   opacity: 0;
 }
-.borealis__item--08 {
-  animation: borealisFade 4s ease 6s;
+.borealis__item--8 {
+  animation: borealisFade 8s ease 4s;
   opacity: 0;
 }
-.borealis__item--09 {
-  animation: borealisFade 4s ease 6.5s;
+.borealis__item--9 {
+  animation: borealisFade 8s ease 4.5s;
+  opacity: 0;
+}
+.borealis__item--10 {
+  animation: borealisFade 8s ease 5s;
+  opacity: 0;
+}
+.borealis__item--11 {
+  animation: borealisFade 8s ease 5.5s;
+  opacity: 0;
+}
+.borealis__item--12 {
+  animation: borealisFade 8s ease 6s;
+  opacity: 0;
+}
+.borealis__item--13 {
+  animation: borealisFade 8s ease 6.5s;
+  opacity: 0;
+}
+.borealis__item--14 {
+  animation: borealisFade 8s ease 7s;
+  opacity: 0;
+}
+.borealis__item--15 {
+  animation: borealisFade 8s ease 7.5s;
+  opacity: 0;
+}
+.borealis__item--16 {
+  animation: borealisFade 8s ease 8s;
+  opacity: 0;
+}
+.borealis__item--17 {
+  animation: borealisFade 8s ease 8.5s;
+  opacity: 0;
+}
+.borealis__item--18 {
+  animation: borealisFade 8s ease 9s;
+  opacity: 0;
+}
+.borealis__item--19 {
+  animation: borealisFade 8s ease 9.5s;
   opacity: 0;
 }
 .remove-me {
