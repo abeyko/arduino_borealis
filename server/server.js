@@ -11,9 +11,15 @@ var sp = new SerialPort(portName, {
     parser: serialport.parsers.readline("\n")
 });
 
-sp.on('data', function(input) {
-    console.log(input);
+sp.on('data', function(socket, data) {
+    console.log(data);
+    sendLight(data, socket);
 });
+
+var sendLight = function(arduinoMessage, socket) {
+    // send the message to the client
+    socket.volatile.emit('notification', arduinoMessage);
+};
 
 app.get('/', function(req, res){
     res.sendfile('public/index.html');
@@ -21,14 +27,17 @@ app.get('/', function(req, res){
 
 app.use(express.static('public'));
 
-io.on('connection', function(socket){
+io.sockets.on('connection', function(socket){
     console.log('a user connected');
+    sp.on('data', function(data) {
+        //sendLight(data, socket);
+    });
+
     socket.on('disconnect', function(){
         console.log('user disconnected');
     });
 });
 
-app.set('port', process.env.PORT || 5000);
-app.listen(app.get('port'), function() {
-    console.log('Listening on port: ', app.get('port'));
+http.listen(3000, function(){
+    console.log('listening on *:3000');
 });
