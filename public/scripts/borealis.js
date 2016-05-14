@@ -1,11 +1,15 @@
 var visualization = d3.select('#borealis__svg');
 
+var socket = io.connect('http://localhost:3000');
 var lightValue = null;
 
 setInterval(function(){
   lightValue = Math.round(Math.random() * (0 - 500) + 500);
 }, 5000);
 
+//setInterval(function(){
+//  lightValue = Math.round(Math.random() * (0 - 500) + 500);
+//}, 1000);
 
 function selectLightHeights() {
   if (lightValue >= 450) {
