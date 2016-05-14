@@ -4,9 +4,9 @@ var lightValue = null;
 
 setInterval(function(){
   lightValue = Math.round(Math.random() * (0 - 500) + 500);
-}, 1000);
+}, 5000);
 
-var heightLights = null;
+
 function selectLightHeights() {
   if (lightValue >= 450) {
     heightLights = 50;
@@ -37,7 +37,6 @@ function selectLightNumber() {
 
 var lightColor = null;
 function selectLightColor() {
-  console.log(lightColor);
   var colorValue = Math.round(Math.random() * (0 - 255) + 255);
   if (lightValue >= 350) {
     lightColor = "rgb(255, "+colorValue+", "+colorValue+")";//red
@@ -65,10 +64,10 @@ setInterval(function(){
       .attr('rx', '10')
       .attr('ry', heightLights)
       .attr('filter', 'url(#f1)')
-        .transition().delay(10000)
+        .transition().delay(15000)
         .attr('class', 'remove-me');
   }
-}, 2000);
+}, 5000);
 
 setInterval(function(){
   visualization.selectAll('.remove-me').remove();
