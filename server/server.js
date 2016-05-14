@@ -11,10 +11,10 @@ var sp = new SerialPort(portName, {
     parser: serialport.parsers.readline("\n")
 });
 
-sp.on('data', function(socket, data) {
-    console.log(data);
-    sendLight(data, socket);
-});
+//sp.on('data', function(socket, data) {
+//    console.log(data);
+//    sendLight(data, socket);
+//});
 
 var sendLight = function(arduinoMessage, socket) {
     // send the message to the client
@@ -30,7 +30,7 @@ app.use(express.static('public'));
 io.sockets.on('connection', function(socket){
     console.log('a user connected');
     sp.on('data', function(data) {
-        //sendLight(data, socket);
+        sendLight(data, socket);
     });
 
     socket.on('disconnect', function(){
