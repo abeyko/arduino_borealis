@@ -1,0 +1,73 @@
+@keyframes borealisFade {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#borealis__visualization {
+  background: #000;
+  width: 100vw;
+  height: 100vh;
+}
+#borealis__svg {
+  width: 100vw;
+  height: 100vh;
+}
+.borealis__item {
+  transform: rotate(12deg);
+}
+.borealis__item--00 {
+  animation: borealisFade 4s ease;
+  opacity: 0;
+}
+.borealis__item--01 {
+  animation: borealisFade 4s ease 0.5s;
+  opacity: 0;
+}
+.borealis__item--02 {
+  animation: borealisFade 4s ease 1s;
+  opacity: 0;
+}
+.borealis__item--03 {
+  animation: borealisFade 4s ease 1.5s;
+  opacity: 0;
+}
+.borealis__item--04 {
+  animation: borealisFade 4s ease 3s;
+  opacity: 0;
+}
+.borealis__item--05 {
+  animation: borealisFade 4s ease 4.5s;
+  opacity: 0;
+}
+.borealis__item--06 {
+  animation: borealisFade 4s ease 5s;
+  opacity: 0;
+}
+.borealis__item--07 {
+  animation: borealisFade 4s ease 5.5s;
+  opacity: 0;
+}
+.borealis__item--08 {
+  animation: borealisFade 4s ease 6s;
+  opacity: 0;
+}
+.borealis__item--09 {
+  animation: borealisFade 4s ease 6.5s;
+  opacity: 0;
+}
+.remove-me {
+  display: none;
+}

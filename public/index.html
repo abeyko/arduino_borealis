@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
-    <script src="./scripts/app.js"></script>
-
+    <title>Aurora</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
+
 <body>
-<h1>Hello!</h1>
+    <div id="borealis__visualization">
+      <svg id="borealis__svg">
+        <defs>
+          <filter id="f1" x="0" y="0">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/borealis.js"></script>
 </body>
+
 </html>
