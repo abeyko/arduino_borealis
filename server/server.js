@@ -4,7 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var serialport = require('serialport');
 var SerialPort = serialport.SerialPort;
-var portName = '/dev/cu.usbmodem1451';
+var portName = '/dev/cu.usbmodem1411';
 
 var sp = new SerialPort(portName, {
     baudRate: 9600,

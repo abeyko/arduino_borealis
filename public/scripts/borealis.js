@@ -3,26 +3,9 @@ var visualization = d3.select('#borealis__svg');
 var socket = io.connect('http://localhost:3000');
 var lightValue = null;
 
-setInterval(function(){
-  lightValue = Math.round(Math.random() * (0 - 500) + 500);
-}, 5000);
-
-//setInterval(function(){
-//  lightValue = Math.round(Math.random() * (0 - 500) + 500);
-//}, 1000);
 
 function selectLightHeights() {
-  if (lightValue >= 450) {
-    heightLights = 50;
-  } else if (lightValue <= 449 && lightValue >= 350) {
-    heightLights = 100;
-  } else if (lightValue <= 349 && lightValue >= 250) {
-    heightLights = 150;
-  } else if (lightValue <= 249 && lightValue >= 150) {
-    heightLights = 200;
-  } else {
-    heightLights = 250;
-  }
+  heightLights = 250;
 }
 
 function selectLightNumber() {
