@@ -26,11 +26,11 @@ var lightColor = null;
 function selectLightColor() {
   var colorValue = Math.round(Math.random() * (0 - 255) + 255);
   if (lightValue >= 350) {
-    lightColor = "rgb(255, "+colorValue+", "+colorValue+")";//red
+    lightColor = "rgb("+colorValue+", 255, "+colorValue+")";//green
   } else if (lightValue <= 349 && lightValue >= 150) {
     lightColor = "rgb(255, 255, "+colorValue+")";//yellow
   } else {
-    lightColor = "rgb("+colorValue+", 255, "+colorValue+")";//green
+    lightColor = "rgb(255, "+colorValue+", "+colorValue+")";//red
   }
 }
 
@@ -54,7 +54,7 @@ setInterval(function(){
         .transition().delay(15000)
         .attr('class', 'remove-me');
   }
-}, 5000);
+}, 2000);
 
 setInterval(function(){
   visualization.selectAll('.remove-me').remove();
